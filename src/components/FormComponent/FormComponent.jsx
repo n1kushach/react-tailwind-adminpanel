@@ -6,19 +6,19 @@ export const FormComponent = (props) => {
   
   const handleSubmit = (e) => {
     const newInfo = {
-      id : props.info.length === 0 ? 1 : props.info[props.info.length - 1].id + 1,
-      language : props.state.language,
-      title : props.state.title,
-      abstract : props.state.abstract,
-      bibliography : props.state.bibliography,
-      keywords : props.state.keywords,
-      year : props.state.year,
-      number : props.state.number,
-      pages : props.state.pages,
-      doi : props.state.doi,
-      author : props.state.author,
-      createDate : props.state.createDate,
-      publishDate : props.state.publishDate,
+      id : props?.info?.length === 0 ? 1 : props.info[props.info.length - 1].id + 1,
+      language : props?.state?.language,
+      title : props?.state?.title,
+      abstract : props?.state?.abstract,
+      bibliography : props?.state?.bibliography,
+      keywords : props?.state?.keywords,
+      year : props?.state?.year,
+      number : props?.state?.number,
+      pages : props?.state?.pages,
+      doi : props?.state?.doi,
+      author : props?.state?.author,
+      createDate : props?.state?.createDate,
+      publishDate : props?.state?.publishDate,
     }
     e.preventDefault();
     props.state.setId(0);

@@ -136,7 +136,7 @@ function App() {
             element={
               <Meniu
                 state={state}
-                info={info}
+                info={info} 
                 setInfo={setInfo}
                 addMenuModal={addMenuModal}
                 setAddMenuModal={setAddMenuModal}

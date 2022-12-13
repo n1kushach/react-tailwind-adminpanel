@@ -2,49 +2,32 @@ import React from "react";
 import "./FormEditComponent.css";
 
 export const FormEditComponent = (props) => {
-  // let editFormState = {
-  //   id: props.state.id,
-  //   language: "",
-  //   title: "",
-  //   abstract: "",
-  //   bibliography: "",
-  //   keywords: "",
-  //   year: "",
-  //   number: "",
-  //   pages: "",
-  //   doi: "",
-  //   author: "",
-  //   createDate: "",
-  //   changeDate: "",
-  // };
 
   const handleEditFormSubmit = () => {
     let newObj = {
-      id: props.state.id,
-      language: props.state.editLanguage,
-      title: props.state.editTitle,
-      abstract: props.state.editAbstract,
-      bibliography: props.state.editBibliography,
-      keywords: props.state.editKeywords,
-      year: props.state.editYear,
-      number: props.state.editNumber,
-      pages: props.state.editPages,
-      doi: props.state.editDoi,
-      author: props.state.editAuthor,
-      createDate: props.state.editCreateDate,
-      changeDate: props.state.editChangeDate,
+      id: props?.state?.id,
+      language: props?.state?.editLanguage,
+      title: props?.state?.editTitle,
+      abstract: props?.state?.editAbstract,
+      bibliography: props?.state?.editBibliography,
+      keywords: props?.state?.editKeywords,
+      year: props?.state?.editYear,
+      number: props?.state?.editNumber,
+      pages: props?.state?.editPages,
+      doi: props?.state?.editDoi,
+      author: props?.state?.editAuthor,
+      createDate: props?.state?.editCreateDate,
+      changeDate: props?.state?.editChangeDate,
     };
     props.state.setInfoEdit(newObj)
     
     // EDIT WORKS BUT ONLY CHANGING "TITLE"
     props.state.setInfo([...props.state.info].map(object => {
       if(object.id == props.state.id) {
-        return {
-          ...object,
-          title: props.state.editTitle
-        }
+        return newObj
       } else return object;
     }))
+    console.log(props.state.info)
     props.toggleEditMenuModal();
   };
 
